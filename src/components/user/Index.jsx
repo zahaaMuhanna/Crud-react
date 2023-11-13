@@ -13,7 +13,35 @@ function Index() {
         setUsers(data.users)
         setLoader(false)
   }
+  let [user,setUser] = useState({
+    name: '',
+    email: '',
+    password: ''
+  })
 
+  const addUser = async()=>{
+    e.preventDefault();
+    setLoader(true)
+    if(Object.keys(validationUserdata(user)).length > 0){
+      setErrors(validationUserdata(user))
+      setLoader(false)
+    }
+    else{
+      try{
+        const {data} = await axios.post( "https://crud-users-gold.vercel.app/users/" , user);
+        console.log(data)
+        if(data.message=='success')
+          toast.success("user added succefully")
+          navigate('/user/index')
+          setLoader(false)
+      }
+       catch(error){
+        setBackError(error.response.data.message);
+        setErrors([]);
+        setLoader(false)
+       }  
+    }
+  }
   const deleteUser= async(id)=>{
     setLoader(true)
     const {data}=await axios.delete(`https://crud-users-gold.vercel.app/users/${id}`)
@@ -147,6 +175,7 @@ function Index() {
     ):<h2>no data</h2>}
   </tbody>
 </table>
+            <button onClick={addUser()}> <Link to={'/user/create'}>Add user</Link></button>
     </div>
 </div>
     </div>
