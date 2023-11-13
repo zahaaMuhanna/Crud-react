@@ -44,6 +44,7 @@ export default function Edit() {
       setLoader(true)
       if(Object.keys(validationUserdata(user)).length > 0){
         setErrors(validationUserdata(user))
+        setLoader(false)
       }
       else{
         try{
