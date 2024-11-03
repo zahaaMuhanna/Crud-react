@@ -18,10 +18,10 @@ This CRUD application provides a user-friendly interface to manage a list of use
 
 ## 🚀 Setup and Usage
 To run this project locally:
-1- Clone the repository: 
+### Clone the repository: 
   - git clone https://github.com/your-username/crud-operations.git
-2- Install dependencies:
+### Install dependencies:
   - cd crud-operations
   - npm install
-3- Start the application:
+### Start the application:
   - npm start
