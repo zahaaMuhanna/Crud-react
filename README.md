@@ -11,3 +11,17 @@ This CRUD application provides a user-friendly interface to manage a list of use
 - Delete User: Remove a user from the list.
 - Loader Component: Visual feedback during data loading.
 - Error Handling: User-friendly messages for scenarios like "User Not Found."
+
+## 🛠️ Technologies Used
+- React: For building user interfaces with reusable components.
+- CSS: For styling the application.
+
+## 🚀 Setup and Usage
+To run this project locally:
+1- Clone the repository: 
+  - git clone https://github.com/your-username/crud-operations.git
+2- Install dependencies:
+  - cd crud-operations
+  - npm install
+3- Start the application:
+  - npm start
